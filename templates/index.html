@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frist page</title>
+</head>
+<body>
+    <div>
+        <form action="/new/" method="post">
+            {% csrf_token %}
+            name:   <input type="text" placeholder="Name" name="Names" required><br>
+            age:    <input type="number" placeholder="age" name="ages"  required><br>
+            job:    <input type="text" placeholder="job" name="jobs"><br>
+            address:<input type="text" placeholder="address" name="add"><br>
+            <button type="submit">save</button>
+        </form>
+    </div>
+    <div>
+        <h3 >{{ message }} </h3>
+    </div>
+</body>
+</html>
