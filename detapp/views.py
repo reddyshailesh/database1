@@ -1,6 +1,9 @@
+import imp
 import re
 from django.shortcuts import render
 from .models import details
+from django.http import JsonResponse
+import json
 
 # Create your views here.
 
@@ -16,3 +19,7 @@ def newpage(request):
     o_ref=details(name=na, age=ag, job=jo, address=add)
     o_ref.save()
     return render(request, 'index.html',{"message":"next"})
+
+def json(request):
+    data = list(details.objects.values())
+    return JsonResponse(data, safe=False)
